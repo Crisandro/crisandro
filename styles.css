@@ -170,3 +170,11 @@ body{
     max-width: 335px;
     font-weight: bold;
 }
+
+.cardOpener{
+    background-image: url(Img/SlifertheSkyDragon-GBI-AE-Back.webp);
+    position: absolute;
+    top: 20vh;
+    left: 50vw;
+    width: 400px;
+}
