@@ -25,6 +25,16 @@ body{
     border-radius: 50px;
 }
 
+.mypic{
+    position: inherit;
+    top: 6vh;
+    left: 2.5vw;
+}
+
+.mypic img{
+    width: 20vw;
+}
+
 .aboutme{
     background-color: var(--fourthcolor);
     position: inherit;
@@ -34,4 +44,5 @@ body{
     height: 70vh;
     transform: rotate(3deg);
     border: 1px solid;
+    border-radius: 10px;
 }
