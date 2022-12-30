@@ -1,0 +1,38 @@
+:root{
+    --firstcolor: #E5E3C9;
+    --secondcolor: #B4CFB0;
+    --thirdcolor: #94B49F;
+    --fourthcolor: #789395;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--firstcolor);
+    overflow: hidden;
+}
+
+.contents{
+    background-color: var(--thirdcolor);
+    width: 80vw;
+    position: absolute;
+    top: 10vh;
+    left: 10vw;
+    height: 80vh;
+    border-radius: 50px;
+}
+
+.aboutme{
+    background-color: var(--fourthcolor);
+    position: inherit;
+    top: 5vh;
+    left: 2vw;
+    width: 25vw;
+    height: 70vh;
+    transform: rotate(3deg);
+    border: 1px solid;
+    box-shadow: 5px 8px #888888;
+}
