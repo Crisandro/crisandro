@@ -27,22 +27,146 @@ body{
 
 .mypic{
     position: inherit;
-    top: 6vh;
-    left: 2.5vw;
+    top: 105px;
+    left: 47px;
+    z-index: -1;
 }
 
 .mypic img{
-    width: 20vw;
+    width: 305px;
 }
 
 .aboutme{
-    background-color: var(--fourthcolor);
+    background-image: url(Img/monster-normal.png);
     position: inherit;
     top: 5vh;
     left: 2vw;
-    width: 25vw;
-    height: 70vh;
+    width: 400px;
+    height: 580px;
     transform: rotate(3deg);
-    border: 1px solid;
     border-radius: 10px;
+    z-index: 9;
+}
+
+#cardTitle{
+    font-family: 'Didact Gothic', sans-serif;
+    font-size: 25px;
+    position: relative;
+    left: 30px;
+    top: 30px;
+}
+
+/* star levels */
+#starLevel {
+    position: relative;
+    width: 22px;
+    left: 335px;
+    top: 40px;
+}
+#starLevel2 {
+    position: relative;
+    width: 22px;
+    left: 285px;
+    top: 40px;
+}
+#starLevel3 {
+    position: relative;
+    width: 22px;
+    left: 235px;
+    top: 40px;
+}
+#starLevel4 {
+    position: relative;
+    width: 22px;
+    left: 185px;
+    top: 40px;
+}
+#starLevel5 {
+    position: relative;
+    width: 22px;
+    left: 135px;
+    top: 40px;
+}
+#starLevel6 {
+    position: relative;
+    width: 22px;
+    left: 85px;
+    top: 40px;
+}
+#starLevel7 {
+    position: relative;
+    width: 22px;
+    left: 35px;
+    top: 40px;
+}
+#starLevel8 {
+    position: relative;
+    width: 22px;
+    left: -15px;
+    top: 40px;
+}
+#starLevel9 {
+    position: relative;
+    width: 22px;
+    left: -65px;
+    top: 40px;
+}
+#starLevel10 {
+    position: relative;
+    width: 22px;
+    left: -115px;
+    top: 40px;
+}
+#starLevel11 {
+    position: relative;
+    width: 22px;
+    left: -165px;
+    top: 40px;
+}
+#starLevel12 {
+    position: relative;
+    width: 22px;
+    left: -215px;
+    top: 40px;
+    visibility: hidden;
+}
+
+#cardType {
+    position: relative;
+    width: 25px;
+    left: 32px;
+    top: 5px;
+}
+
+#monsterType {
+    position: relative;
+    left: 30px;
+    top: 380px;
+}
+
+#monsterDescription {
+    position: relative;
+    left: 35px;
+    top: 382px;
+    font-size: 12px;
+    max-width: 335px;
+    font-style: italic;
+}
+
+#monsterAtk {
+    position: relative;
+    left: 262px;
+    bottom: -392px;
+    font-size: 14px;
+    max-width: 335px;
+    font-weight: bold;
+}
+
+#monsterDef {
+    position: relative;
+    left: 342px;
+    bottom: -376px;
+    font-size: 14px;
+    max-width: 335px;
+    font-weight: bold;
 }
