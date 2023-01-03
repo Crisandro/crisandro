@@ -1,21 +1,17 @@
-const element = document.getElementById("cardOpener");
-const cardfront = document.querySelector("#card");
-cardfront.vanillaTilt.destroy();
-console.log(cardfront.style.visibility == "hidden");
+const front = document.querySelector(".front");
+const card = document.querySelector("#card");
+//cardfront.vanillaTilt.destroy();
 
-element.addEventListener("click", function() {
-    console.log("clicked!");
-    element.style.top = "5vh";
-    cardfront.style.top = "5vh";
-    cardfront.style.visibility= "visible";
-    if(cardfront.style.visibility == "hidden")
-        setTimeout(onthetilt(), 1500);
+card.addEventListener("click", function() {    
+    console.log(card.style.top == "75vh");
+    if(card.style.top == "10vh"){
+        card.style.top = "75vh";
+        card.style.transform = "rotateY(180deg)";
+    }
+    else{
+        card.style.top = "10vh";
+        card.style.transform = "rotateY(0deg)";
+    }
+    
 });
 
-function onthetilt(){
-    element.style.transform = "rotateY(180deg)";
-    cardfront.style.transform = "rotateY(180deg)";
-    cardfront.style.zIndex = "1";
-    VanillaTilt.init(cardfront);
-    element.style.visibility = "hidden";
-}
