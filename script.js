@@ -1,7 +1,9 @@
+const back = document.querySelector("#back");
 const card = document.querySelector(".card");
 const shadow = document.getElementById("shadowbox");
 const pic = document.querySelector("#photos");
 let darkBoxVisible = false, starting = true;
+
 
 card.addEventListener("click", cardIn);
 
