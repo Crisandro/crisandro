@@ -12,9 +12,9 @@ function cardOut(){
         shadow.style.opacity = "0";
         shadow.style.visibility = "hidden";
         card.vanillaTilt.destroy();
-        card.style.top = "75vh";
-        card.style.left = "2vw";
-        card.style.transform = "rotateY(180deg)";
+        card.style.top = "10vh";
+        card.style.left = "-30vw";
+        card.style.transform = "rotateY(180deg) rotateZ(-35deg)";
         starting = true;
     }
 }

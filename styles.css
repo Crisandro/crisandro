@@ -1,8 +1,9 @@
 :root{
-    --firstcolor: #E5E3C9;
-    --secondcolor: #B4CFB0;
-    --thirdcolor: #94B49F;
-    --fourthcolor: #789395;
+    --firstcolor: #1A1A1D;
+    --secondcolor: #4E4E50;
+    --thirdcolor: #6F2232;
+    --fourthcolor: #950740;
+    --fifthcolor: #C3073F;
 }
 
 *{
@@ -15,8 +16,58 @@ body{
     overflow: hidden;
 }
 
+
+.container{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    animation: animate 4s linear infinite;
+}
+@keyframes animate{
+    0%{
+        filter: hue-rotate(0deg);
+    }
+    100%{
+        filter: hue-rotate(360deg);
+    }
+}
+.row{
+    display: inline-flex;
+    margin-left: -50px;
+    margin-top: -32px;
+    overflow: hidden;
+}
+.row:nth-child(even){
+    margin-left: 1px;
+}
+.hexagon{
+    position: relative;
+    height: 110px;
+    width: 100px;
+    background: #111;
+    margin: 1px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: 2s;
+}
+.hexagon:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    pointer-events: none;
+    background: rgba(255, 255, 255, 0.02);
+}
+.hexagon:hover{
+    transition: 0s;
+    background: #0f0;
+}
+
 .contents{
-    background-color: var(--thirdcolor);
+    background-color: transparent;
+    background-color: var(--firstcolor);
+    border: var(--fifthcolor) solid;
     width: 80vw;
     height: 80vh;
     position: absolute;
@@ -26,31 +77,34 @@ body{
     perspective: 1500;
 }
 
+.codepens{
+    width: 90%;
+    margin-left: 5%;
+    border-radius: 10px;
+}
+
 .card{
     position:relative;
-    top: 75vh;
-    left: 2vw;
+    top: 10vh;
+    left: -30vw;
     width: 400px;
     height: 580px;
     border-radius: 10px;
     transition: 0.5s;
     transform-style: preserve-3d;
-    transform: rotateY(180deg);
+    transform: rotateY(180deg) rotateZ(-35deg);
     margin: 0 !important;
     z-index: 1;
 }
-
 .mypic{
     position: inherit;
     top: 105px;
     left: 47px;
     z-index: -1;
 }
-
 .mypic img{
     width: 305px;
 }
-
 .front{
     background-image: url(Img/monster-normal.png);
     position: absolute;
@@ -65,7 +119,6 @@ body{
     visibility: visible;
     -webkit-backface-visibility: hidden;
 }
-
 #back{
     position: absolute;
     top: 0;
@@ -77,8 +130,6 @@ body{
     -webkit-backface-visibility: hidden;
     transform: rotateY(180deg);
 }
-
-
 #cardTitle{
     font-family: 'Didact Gothic', sans-serif;
     font-size: 25px;
@@ -201,7 +252,7 @@ body{
     width: 92%;
     height: 80%;
     top: 10vh;
-    left: 3vw;
+    left: 1vw;
 }
 
 .gallery-cell {
@@ -219,10 +270,14 @@ body{
 
 /*photo gallery*/
 #photos{
+    background-color: var(--secondcolor);
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 1vh;
     position: inherit;
     width: 50%;
-    height: 100%;
-    left: 52%;
+    height: 91%;
+    left: 51%;
     top: 0%;
     line-height:0;
    -webkit-column-count:5; /* split it into 5 columns */
@@ -233,24 +288,39 @@ body{
    column-gap:5px;
    -ms-overflow-style: none; 
    scrollbar-width: none;
-   overflow-y: scroll;
+   overflow-y: hidden;
    scroll-behavior: smooth;
+   filter: grayscale(70%);
+   transition: 1s;
+   scale: 1;
 }
 
-#photos::-webkit-scrollbar {
-    display: none; 
+#photos::-webkit-scrollbar-track{
+	background-color: var(--secondcolor);
 }
+
+#photos::-webkit-scrollbar{
+	height: 5px;
+}
+
+#photos::-webkit-scrollbar-thumb{
+	background-color: var(--thirdcolor);
+	border: 1px solid #555555;
+}
+
+/*#photos::-webkit-scrollbar {
+    display: none; 
+}*/
 
 #photos img{
     width: 100% !important;
     height: auto !important;
     margin-bottom:5px; /* to match column gap */
-    filter: grayscale(100%);
-    transition: 1s;
 }
 
-#photos img:hover{
+#photos:hover{
     filter: none;
+    scale: 1.01;
 }
 
 /*@media (max-width: 1200px) {
