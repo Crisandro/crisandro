@@ -1,14 +1,13 @@
-const card = document.querySelector("#card");
+const card = document.querySelector(".card");
 const shadow = document.getElementById("shadowbox");
 const pic = document.querySelector("#photos");
 let darkBoxVisible = false, starting = true;
-//card.vanillaTilt.destroy();
 
-card.addEventListener("click", cardin);
+card.addEventListener("click", cardIn);
 
-shadow.addEventListener("click", cardout);
+shadow.addEventListener("click", cardOut);
 
-function cardout(){
+function cardOut(){
     if(starting==false){
         shadow.style.opacity = "0";
         shadow.style.visibility = "hidden";
@@ -20,7 +19,7 @@ function cardout(){
     }
 }
 
-function cardin(){
+function cardIn(){
     if(starting){
         shadow.style.opacity = "1";
         shadow.style.visibility = "visible";
@@ -41,21 +40,12 @@ function cardin(){
     }
 }
 
-pic.addEventListener('click', function(){
-    console.log("clicked");
-})
-
 var item = document.getElementById("photos");
 
 window.addEventListener("wheel", function (e) {
     if (e.deltaY > 0) pic.scrollLeft += 100;
     else pic.scrollLeft -= 100;
 });
-
-function shadowy(){
-    console.log("done");
-    
-}
 
 /*function showDarkbox(url) {
     if(!darkBoxVisible) {

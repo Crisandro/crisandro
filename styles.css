@@ -26,7 +26,7 @@ body{
     perspective: 1500;
 }
 
-#card{
+.card{
     position:relative;
     top: 75vh;
     left: 2vw;
@@ -38,10 +38,6 @@ body{
     transform: rotateY(180deg);
     margin: 0 !important;
     z-index: 1;
-}
-
-#card:hover{
-    top:70vh;
 }
 
 .mypic{
