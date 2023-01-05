@@ -1,6 +1,5 @@
 const front = document.querySelector(".front");
 const card = document.querySelector("#card");
-//cardfront.vanillaTilt.destroy();
 
 card.addEventListener("click", function() {    
     console.log(card.style.top == "75vh");
@@ -12,6 +11,4 @@ card.addEventListener("click", function() {
         card.style.top = "10vh";
         card.style.transform = "rotateY(0deg)";
     }
-    
 });
-

@@ -235,3 +235,14 @@ body{
     top: 50%;
     border: var(--secondcolor) solid;
 }
+
+.gallery-cell {
+    height: 100%;
+    margin-right: 10px;
+}
+
+.gallery{
+    height: 50%;
+    left: 0;
+    top: 0;
+}
