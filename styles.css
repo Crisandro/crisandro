@@ -26,10 +26,6 @@ body{
     perspective: 1500;
 }
 
-/*.contents:hover #card{
-    -webkit-transform: rotateY(180deg);
-}*/
-
 #card{
     position:relative;
     top: 75vh;
@@ -41,7 +37,7 @@ body{
     transform-style: preserve-3d;
     transform: rotateY(180deg);
     margin: 0 !important;
-    z-index: 5;
+    z-index: -5;
 }
 
 #card:hover{
@@ -205,7 +201,6 @@ body{
 }
 
 .portfolio{
-    border: var(--fourthcolor) solid;
     position: absolute;
     width: 92%;
     height: 80%;
@@ -213,36 +208,59 @@ body{
     left: 3vw;
 }
 
-.codes{
-    position: inherit;
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    height: 50%;
-    left: 0;
-    top: 0;
-    overflow-x: auto;
-    overflow-y: hidden;
-}
-
-.photos{
-    position: inherit;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 48%;
-    left: 0;
-    top: 50%;
-    border: var(--secondcolor) solid;
-}
-
 .gallery-cell {
+    width: 100%;
     height: 100%;
     margin-right: 10px;
 }
 
 .gallery{
-    height: 50%;
+    height: 95%;
+    width: 50%;
     left: 0;
     top: 0;
 }
+
+/*photo gallery*/
+#photos{
+    position: inherit;
+    width: 50%;
+    height: 100%;
+    left: 52%;
+    top: 0%;
+    line-height:0;
+   -webkit-column-count:5; /* split it into 5 columns */
+   -webkit-column-gap:5px; /* give it a 5px gap between columns */
+   -moz-column-count:5;
+   -moz-column-gap:5px;
+   column-count:3;
+   column-gap:5px;
+   -ms-overflow-style: none; 
+   scrollbar-width: none;
+   overflow-y: scroll;
+   scroll-behavior: smooth;
+}
+
+#photos::-webkit-scrollbar {
+    display: none; 
+}
+
+#photos img{
+    width: 100% !important;
+    height: auto !important;
+    margin-bottom:5px; /* to match column gap */
+    filter: grayscale(100%);
+    transition: 1s;
+}
+
+#photos img:hover{
+    filter: none;
+}
+
+/*@media (max-width: 1200px) {
+    #photos {
+     -moz-column-count:    4;
+     -webkit-column-count: 4;
+     column-count:         4;
+    }
+}*/
