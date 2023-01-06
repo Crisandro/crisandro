@@ -96,7 +96,7 @@ body{
     transform-style: preserve-3d;
     transform: rotateY(180deg) rotateZ(-35deg);
     margin: 0 !important;
-    z-index: 1;
+    z-index: 3;
 }
 .mypic{
     position: inherit;
@@ -116,7 +116,6 @@ body{
     height: 580px;
     border-radius: 10px;
     z-index: 0;
-    visibility: hidden;
     overflow: hidden;
     visibility: visible;
     -webkit-backface-visibility: hidden;
@@ -251,40 +250,47 @@ body{
 
 /*Magic card*/
 .card1{
-    position:absolute;
-    top: 50vh;
-    left: 30vw;
+    position:relative;
+    top: -30vh;
+    left: -30vw;
     width: 400px;
     height: 580px;
     border-radius: 10px;
     transition: 0.5s;
     transform-style: preserve-3d;
-    transform: rotateY(0deg) rotateZ(-35deg);
+    transform: rotateY(180deg) rotateZ(-35deg);
     margin: 0 !important;
-    z-index: 50;
-}
-.magicpic{
-    position: inherit;
-    top: 105px;
-    left: 47px;
-    z-index: -1;
-}
-.magicpic img{
-    width: 305px;
+    z-index: 2;
 }
 .magicfront{
-    background-image: url(Img/magic.png);
     position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    overflow: hidden;
+    visibility: visible;
+    -webkit-backface-visibility: hidden;
+}
+.bgmagic{
+    position: relative;
     top: 0vh;
     left: 0vw;
     width: 400px;
     height: 580px;
     border-radius: 10px;
-    z-index: 0;
+    z-index: 1;
     visibility: visible;
     overflow: hidden;
-    visibility: visible;
-    -webkit-backface-visibility: visible;
+    -webkit-backface-visibility: hidden;
+}
+.magicpic{
+    position: relative;
+    top: -512px;
+    left: 45px;
+    z-index: 1;
+}
+.magicpic img{
+    width: 312px;
 }
 #magicback{
     position: absolute;
@@ -293,30 +299,26 @@ body{
     width: 400px;
     height: 580px;
     border-radius: 8px;
-    z-index: -2;
+    z-index: 2;
     -webkit-backface-visibility: hidden;
     transform: rotateY(180deg);
 }
 #card1Title{
     font-family: 'Didact Gothic', sans-serif;
     font-size: 25px;
+    color: #FFF;
     position: relative;
+    z-index: 1;
     left: 30px;
-    top: 30px;
-}
-#card1Type {
-    position: relative;
-    width: 25px;
-    left: 32px;
-    top: 5px;
+    top: -552px;
 }
 #magicDescription {
-    position: relative;
+    position: absolute;
+    z-index: 1;
     left: 35px;
-    top: 382px;
-    font-size: 12px;
+    top: 440px;
+    font-size: 14px;
     max-width: 335px;
-    font-style: italic;
 }
 
 .portfolio{
