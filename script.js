@@ -1,92 +1,48 @@
-const back = document.querySelector("#back");
-const card = document.querySelector(".card");
-const magicback = document.querySelector("#magicback");
-const magiccard = document.querySelector(".card1");
+const card = document.querySelector("#monstercard");
+const magiccard = document.querySelector("#magiccard");
 const shadow = document.getElementById("shadowbox");
 const pic = document.querySelector("#photos");
 let darkBoxVisible = false, starting = true, magicstarting=true;
 
+//shadow.addEventListener("click", cardOut);
 
-card.addEventListener("click", cardIn);
-magiccard.addEventListener("click",magiccardIn);
-
-shadow.addEventListener("click", cardOut);
-
-function cardOut(){
-    if(starting==false && magicstarting==true){
-        shadow.style.opacity = "0";
-        shadow.style.visibility = "hidden";
-        card.vanillaTilt.destroy();
+function cardOut(cardname){
+    let choosen = document.querySelector(`[data-name=${CSS.escape(cardname)}]`);
+    shadow.style.opacity = "0";
+    shadow.style.visibility = "hidden";
+    choosen.vanillaTilt.destroy();
+    choosen.style.transform = "rotateY(180deg) rotateZ(-35deg)";   
+    if(cardname == "maincard"){
         card.style.top = "10vh";
         card.style.left = "-30vw";
-        card.style.transform = "rotateY(180deg) rotateZ(-35deg)";
-        starting = true;
-    }
-    else if(starting==true && magicstarting==false){
-        shadow.style.opacity = "0";
-        shadow.style.visibility = "hidden";
-        magiccard.vanillaTilt.destroy();
+    }else if(cardname == "coffeecard"){
         magiccard.style.top = "-30vh";
         magiccard.style.left = "-30vw";
-        magiccard.style.transform = "rotateY(180deg) rotateZ(-35deg)";
-        magicstarting = true;
-    }
-    else{
-        console.log("yes");
-        shadow.style.opacity = "0";
-        shadow.style.visibility = "hidden";
-        card.vanillaTilt.destroy();
-        card.style.top = "10vh";
-        card.style.left = "-30vw";
-        card.style.transform = "rotateY(180deg) rotateZ(-35deg)";
-        starting = true;
-        magiccard.vanillaTilt.destroy();
-        magiccard.style.top = "-30vh";
-        magiccard.style.left = "-30vw";
-        magiccard.style.transform = "rotateY(180deg) rotateZ(-35deg)";
-        magicstarting = true;
     }
 }
 
-function cardIn(){
-    if(starting){
-        shadow.style.opacity = "1";
-        shadow.style.visibility = "visible";
-        card.style.top = "10vh";
-        card.style.left = "30vw";
-        card.style.transform = "rotateY(0deg)";
-        starting = false;
-        VanillaTilt.init(document.querySelector("#card"), {
-            max: 10,
-            speed: 1000,
-            glare: true,
-            startX: 0,
-            startY: 0,
-            "max-glare": 0.5,
-            scale: 1.1,
-            perspective: 1500
-        });
-    }
-}
-
-function magiccardIn(){
-    if(magicstarting){
-        shadow.style.opacity = "1";
-        shadow.style.visibility = "visible";
-        magiccard.style.top = "-50vh";
-        magiccard.style.left = "30vw";
-        magiccard.style.transform = "rotateY(0deg)";
-        magicstarting = false;
-        VanillaTilt.init(document.querySelector("#card1"), {
-            max: 10,
-            speed: 1000,
-            glare: true,
-            startX: 0,
-            startY: 0,
-            "max-glare": 0.5,
-            scale: 1.1,
-            perspective: 1500
-        });
+function cardIn(cardname){
+    let choosen = document.querySelector(`[data-name=${CSS.escape(cardname)}]`);
+    shadow.style.opacity = "1";
+    shadow.style.visibility = "visible";
+    choosen.style.transform = "rotateY(0deg)";
+    starting = false;
+    VanillaTilt.init(choosen, {
+        max: 10,
+        speed: 1000,
+        glare: true,
+        startX: 0,
+        startY: 0,
+        "max-glare": 0.5,
+        scale: 1.1,
+        perspective: 1500
+    });
+    if(cardname == "maincard"){
+        choosen.style.top = "10vh";
+        choosen.style.left = "30vw";
+    }else if(cardname == "coffeecard"){
+        choosen.style.top = "-52vh";
+        choosen.style.left = "30vw";
     }
 }
 

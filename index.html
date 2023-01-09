@@ -279,8 +279,8 @@
     <div id="shadowbox"></div>
     
     <div class="contents">
-        <div id="card" class="card">
-            <div class="front" >
+        <div id="monstercard" class="card" data-name="maincard">
+            <div class="front" onclick="cardOut('maincard')">
                 <h1 id="cardTitle">Crisandro Basoy</h1>
                 <img id="starLevel" src="Img/star.png"/>
                 <img id="starLevel2" src="Img/star.png"/>
@@ -301,10 +301,10 @@
                 <p id="monsterAtk">?</p>
                 <p id="monsterDef">?</p>
             </div>
-            <img id="back" src="Img/SlifertheSkyDragon-GBI-AE-Back.webp"/>
+            <img id="back" onclick="cardIn('maincard')" src="Img/SlifertheSkyDragon-GBI-AE-Back.webp"/>
         </div>
-        <div id="card1" class="card1">
-            <div class="magicfont">
+        <div id="magiccard" class="card" data-name="coffeecard">
+            <div class="magicfont" onclick="cardOut('coffeecard')">
                 <img class="bgmagic" src="Img/magic.png">
                 <h1 id="card1Title">Coffee</h1>
                 <div class="magicpic"><img src="Img/coffee.png"/></div>
@@ -313,7 +313,7 @@
                     Use this card to increase alertness and energy also gives ability to concentrate.
                 </p>
             </div>
-            <img id="magicback" src="Img/SlifertheSkyDragon-GBI-AE-Back.webp"/>
+            <img id="magicback" onclick="cardIn('coffeecard')" src="Img/SlifertheSkyDragon-GBI-AE-Back.webp"/>
         </div>
 
         <div class="portfolio">
